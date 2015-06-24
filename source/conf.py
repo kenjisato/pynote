@@ -38,7 +38,7 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
-    'matplotlib.sphinxext.mathmpl',
+    #'matplotlib.sphinxext.mathmpl',
     'matplotlib.sphinxext.only_directives',
     'matplotlib.sphinxext.plot_directive',
     'IPython.sphinxext.ipython_console_highlighting',
