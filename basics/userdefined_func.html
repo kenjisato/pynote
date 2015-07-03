@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>関数定義 &mdash; Python programing for economic dynamics 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.3.4/cosmo/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Python programing for economic dynamics 0.1 documentation" href="../index.html" />
+    <link rel="up" title="Python 入門" href="index.html" />
+    <link rel="next" title="組込み型" href="types.html" />
+    <link rel="prev" title="条件分岐" href="condition.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Python for Economics</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../arrangement/index.html">プログラミングを始める前に</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../arrangement/pythonenv.html">Python のインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arrangement/editor.html">テキストエディタのインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arrangement/cui.html">コマンド操作に慣れる</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arrangement/ipython.html">IPython</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Python 入門</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="literal_variable.html">リテラルと変数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arithmetic.html">算術計算</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logic.html">論理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="condition.html">条件分岐</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">関数定義</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html">組込み型</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../stdlib/index.html">標準ライブラリ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../stdlib/itertools.html"><cite>itertools</cite></a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">関数定義</a><ul>
+<li><a class="reference internal" href="#id2">基本構文</a></li>
+<li><a class="reference internal" href="#id3">スコープ</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="condition.html" title="Previous Chapter: 条件分岐"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; 条件分岐</span>
+    </a>
+  </li>
+  <li>
+    <a href="types.html" title="Next Chapter: 組込み型"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">組込み型 &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">関数定義</a><ul>
+<li><a class="reference internal" href="#id2">基本構文</a></li>
+<li><a class="reference internal" href="#id3">スコープ</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="sourcelink">
+  <a href="../_sources/basics/userdefined_func.txt"
+     rel="nofollow">Source</a>
+</div>
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="id1">
+<h1>関数定義<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="arithmetic.html"><em>算術計算</em></a> で <code class="docutils literal"><span class="pre">math.log()</span></code>, <code class="docutils literal"><span class="pre">math.log10()</span></code>, <code class="docutils literal"><span class="pre">math.exp()</span></code> などの関数を使いました. これらの関数は標準ライブラリ
+で定義されているものです. この節では, 自前の関数を定義する方法を学びます.</p>
+<div class="section" id="id2">
+<h2>基本構文<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>基本の構文は次の通りです.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">param1</span><span class="p">,</span> <span class="n">param2</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+    <span class="c"># do something here</span>
+    <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+</div>
+<p>例えば,</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">my_double</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>  <span class="c"># 1, 2</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>  <span class="c"># 3</span>
+</pre></div>
+</div>
+<p>のように書きます. 例のごとく コピー → <code class="docutils literal"><span class="pre">%paste</span></code> で IPython シェルに渡し, 動作を確認してみてください.</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [1]: </span><span class="o">%</span><span class="k">paste</span>
+<span class="go">def my_double(x):</span>
+<span class="go">    return 2 * x</span>
+
+<span class="go">## -- End pasted text --</span>
+<span class="gp">In [2]: </span><span class="n">my_double</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c"># 4</span>
+<span class="gh">Out[2]: </span><span class="go">20</span>
+
+<span class="gp">In [3]: </span><span class="n">my_double</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span><span class="p">)</span>  <span class="c"># 5</span>
+<span class="go">           Out[3]: -4.0</span>
+
+<span class="gp">In [4]: </span><span class="n">my_double</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">3j</span><span class="p">)</span>  <span class="c"># 5</span>
+<span class="go">                        Out[4]: (2-6j)</span>
+
+<span class="gp">In [5]: </span><span class="n">my_double</span><span class="p">(</span><span class="s">&quot;abc&quot;</span><span class="p">)</span>  <span class="c"># 5</span>
+<span class="go">                                       Out[5]: &#39;abcabc&#39;</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><code class="docutils literal"><span class="pre">my_double</span></code> は関数の名前です</li>
+<li><code class="docutils literal"><span class="pre">def</span> <span class="pre">my_double(x):</span></code> の行で, 仮引数 (パラメータ) <code class="docutils literal"><span class="pre">x</span></code> を宣言しています. これで, <code class="docutils literal"><span class="pre">my_double</span></code> は引数を1つだけ取る関数になります.</li>
+<li><code class="docutils literal"><span class="pre">return</span></code> 文が関数によって値が出力されます.</li>
+<li>仮引数 <code class="docutils literal"><span class="pre">x</span></code> を 10 として関数が実行されます. <code class="docutils literal"><span class="pre">return</span></code> 文は 2 * 10 を出力します.</li>
+<li>この関数は 2 * x さえ正しく定義されていれば実行できます. ただし, 常に意味があるとは限りません.</li>
+</ol>
+<p>仮引数を2つ以上取る場合も同様に定義します.</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [6]: </span><span class="k">def</span> <span class="nf">my_add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>  <span class="c"># 簡単な関数なら1行で定義してよい</span>
+
+<span class="gp">In [7]: </span><span class="n">my_add</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gh">Out[7]: </span><span class="go">12</span>
+
+<span class="gp">In [8]: </span><span class="n">my_add</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">3.8</span><span class="p">)</span>
+<span class="go">           Out[8]: 2.8</span>
+
+<span class="gp">In [9]: </span><span class="n">my_add</span><span class="p">(</span><span class="s">&#39;abc&#39;</span><span class="p">,</span> <span class="s">&#39;def&#39;</span><span class="p">)</span>
+<span class="go">                       Out[9]: &#39;abcdef&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>スコープ<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>関数を作る目的は, 繰り返し実行するコード片をまとめて再利用しやすくするところにあります.</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Kenji Sato.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

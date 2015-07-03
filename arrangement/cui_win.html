@@ -77,9 +77,10 @@
 <li class="toctree-l2"><a class="reference internal" href="ipython.html">IPython</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../basics/index.html">Python の基本</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../basics/index.html">Python 入門</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../basics/literal_variable.html">リテラルと変数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/arithmetic.html">算術計算</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/logic.html">論理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/types.html">組込み型</a></li>
 </ul>
 </li>
@@ -179,11 +180,12 @@
 <div class="section" id="ls">
 <h2>ls<a class="headerlink" href="#ls" title="Permalink to this headline">¶</a></h2>
 <p>以下では, シェル (Windows であれば Windows PowerShell) でコマンド入力するということを指示するときには, 次の記法を用います. 上の
-スクリーンショットと見比べてください:</p>
+スクリーンショットと見比べてください. <code class="docutils literal"><span class="pre">PS</span> <span class="pre">C:\Users\Kenji</span> <span class="pre">&gt;</span></code> と書かれている部分はユーザー名や作業中のディレクトリによって変わるので,
+この部分を <code class="docutils literal"><span class="pre">$</span></code> で置き換えます.</p>
 <div class="highlight-python"><div class="highlight"><pre>$ ls
 </pre></div>
 </div>
-<p>シェルに 「 ls 」とだけ入力してエンター（リターン）を押してください. 次のような出力となります.</p>
+<p>シェルに 「 ls 」とだけ入力してエンター（リターン）を押した結果, 次のような出力が表示されます.</p>
 <a class="reference internal image-reference" href="../_images/wshell-02.png"><img alt="ls の結果" src="../_images/wshell-02.png" style="width: 439.2px; height: 272.4px;" /></a>
 <p>コマンドに加えて, コマンドの出力を表示するときは, 画面キャプチャの代わりに次のように書くことにします.</p>
 <div class="highlight-python"><div class="highlight"><pre>$ ls
@@ -282,7 +284,7 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
 <p>いま実行されているのはPython のインタラクティブシェルというアプリケーションです. 「 &gt;&gt;&gt; 」と書かれているののは, シェルが入力待ち状態に
 なっているという意味です. Windows PowerShell のシェルコマンドは, 「 $ command_name 」 で表しました. 「Python のシェルに入力して
 ください」ということを 「 &gt;&gt;&gt; 」を付けて表します. シェルの出力については先ほどと同様に扱います. すなわち, &gt;&gt;&gt; を書いている行は読者が
-入力することを想定していて, &gt;&gt;&gt; を書いてない行はそのコマンドが実行の結果です:</p>
+入力することを想定していて, &gt;&gt;&gt; を書いてない行はそのコマンドを実行した結果を表示したものです:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">this</span>
 <span class="go">The Zen of Python, by Tim Peters</span>
 
