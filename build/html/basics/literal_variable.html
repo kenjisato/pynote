@@ -1,0 +1,395 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>リテラルと変数 &mdash; Python programing for economic dynamics 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.3.4/cosmo/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Python programing for economic dynamics 0.1 documentation" href="../index.html" />
+    <link rel="up" title="Python 入門" href="index.html" />
+    <link rel="next" title="算術計算" href="arithmetic.html" />
+    <link rel="prev" title="Python 入門" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Python for Economics</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../arrangement/index.html">プログラミングを始める前に</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../arrangement/pythonenv.html">Python のインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arrangement/editor.html">テキストエディタのインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arrangement/cui.html">コマンド操作に慣れる</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arrangement/ipython.html">IPython</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Python 入門</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">リテラルと変数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arithmetic.html">算術計算</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logic.html">論理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="types.html">組込み型</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../stdlib/index.html">標準ライブラリ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../stdlib/itertools.html"><cite>itertools</cite></a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">リテラルと変数</a><ul>
+<li><a class="reference internal" href="#id2">リテラル表記</a></li>
+<li><a class="reference internal" href="#id3">変数</a></li>
+<li><a class="reference internal" href="#id4">有効な名前</a><ul>
+<li><a class="reference internal" href="#id5">予約語</a></li>
+<li><a class="reference internal" href="#id6">組み込み定数</a></li>
+<li><a class="reference internal" href="#id7">組み込み関数と組み込み例外, 標準ライブラリ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="index.html" title="Previous Chapter: Python 入門"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Python 入門</span>
+    </a>
+  </li>
+  <li>
+    <a href="arithmetic.html" title="Next Chapter: 算術計算"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">算術計算 &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">リテラルと変数</a><ul>
+<li><a class="reference internal" href="#id2">リテラル表記</a></li>
+<li><a class="reference internal" href="#id3">変数</a></li>
+<li><a class="reference internal" href="#id4">有効な名前</a><ul>
+<li><a class="reference internal" href="#id5">予約語</a></li>
+<li><a class="reference internal" href="#id6">組み込み定数</a></li>
+<li><a class="reference internal" href="#id7">組み込み関数と組み込み例外, 標準ライブラリ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="sourcelink">
+  <a href="../_sources/basics/literal_variable.txt"
+     rel="nofollow">Source</a>
+</div>
+        </div>
+      </div>
+    <div class="col-md-9">
+      
+  <div class="section" id="id1">
+<h1>リテラルと変数<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>IPython シェルを起動してください</p>
+<div class="highlight-python"><div class="highlight"><pre>$ ipython
+</pre></div>
+</div>
+<div class="section" id="id2">
+<h2>リテラル表記<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>これからたくさんの文字(列)や数字や, もっと複雑な構造を持った対象 (オブジェクト) を操作することになります. すべてのオブジェクトは「型」と呼
+ばれる情報を持っていて, そのオブジェクトに対して許される操作が決まっています.</p>
+<p>基本的なオブジェクトには「リテラル」と呼ばれる表記法があり, 簡便な記法によってオブジェクトを作ることができます. 文字列のリテラル, 整数の
+リテラル, 小数のリテラル, 複素数のリテラルなどがこのテキストで使う中でもっとも基本的なものです.</p>
+<p>文字(列)を引用符 (<code class="docutils literal"><span class="pre">&quot;</span> <span class="pre">...</span> <span class="pre">&quot;</span></code> or <code class="docutils literal"><span class="pre">'</span> <span class="pre">...</span> <span class="pre">'</span></code>)で囲んだものが文字列リテラルです. 引用符の中に引用符を入れたい場合は, 種類の異なる引用符を
+使って囲みます.</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [1]: </span><span class="s">&#39;This is a string literal.&#39;</span>
+<span class="gh">Out[1]: </span><span class="go">&#39;This is a string literal.&#39;</span>
+
+<span class="gp">In [2]: </span><span class="s">&quot;This is also a string literal.&quot;</span>
+<span class="go">                                    Out[2]: &#39;This is also a string literal.&#39;</span>
+
+<span class="gp">In [3]: </span><span class="s">&quot;This is a &#39;nested&#39; quatation mark.&quot;</span>
+<span class="go">                                                                             Out[3]: &quot;This is a &#39;nested&#39; quatation mark.&quot;</span>
+</pre></div>
+</div>
+<p>数字 (整数, 小数, 複素数) のリテラルは自明なものです. 虚数部分を <code class="docutils literal"><span class="pre">1j</span></code>, <code class="docutils literal"><span class="pre">2j</span></code> (あるいは, <code class="docutils literal"><span class="pre">1J</span></code>, <code class="docutils literal"><span class="pre">2J</span></code>)
+のように書くことに注意してください. <code class="docutils literal"><span class="pre">1j</span></code> の代わりに <code class="docutils literal"><span class="pre">j</span></code> とすることはできません.</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [4]: </span><span class="mi">10</span>
+<span class="gh">Out[4]: </span><span class="go">10</span>
+
+<span class="gp">In [5]: </span><span class="o">-</span><span class="mi">10</span>
+<span class="go">           Out[5]: -10</span>
+
+<span class="gp">In [6]: </span><span class="mi">10</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="go">                       Out[6]: 20</span>
+
+<span class="gp">In [7]: </span><span class="mf">1.2</span>
+<span class="go">                                  Out[7]: 1.2</span>
+
+<span class="gp">In [8]: </span><span class="mi">10</span><span class="o">+</span><span class="mi">1j</span>
+<span class="go">                                              Out[8]: (10+1j)</span>
+</pre></div>
+</div>
+<p>上で挙げた表記は特定の型のオブジェクトを生成しています. <code class="docutils literal"><span class="pre">type()</span></code> 関数を使って確認しておきましょう.</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [9]: </span><span class="nb">type</span><span class="p">(</span><span class="s">&quot;This is another string&quot;</span><span class="p">)</span>
+<span class="gh">Out[9]: </span><span class="go">str</span>
+
+<span class="gp">In [10]: </span><span class="nb">type</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="go">            Out[10]: int</span>
+
+<span class="gp">In [11]: </span><span class="nb">type</span><span class="p">(</span><span class="mf">1.1</span><span class="p">)</span>
+<span class="go">                         Out[11]: float</span>
+
+<span class="gp">In [12]: </span><span class="nb">type</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">1j</span><span class="p">)</span>
+<span class="go">                                        Out[12]: complex</span>
+</pre></div>
+</div>
+<p>このように, ある特定の型のオブジェクトを生成するための簡便な表記法を**リテラル**と呼びます. 他の型でもこのような表記法を利用できるものが
+あります. <cite>組み込み型 &lt;&gt;</cite> のセクションで解説します.</p>
+</div>
+<div class="section" id="id3">
+<h2>変数<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Python における変数は「特定のオブジェクトに対するラベル」のことです. 例えば,</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [13]: </span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+<p>と書けば, <code class="docutils literal"><span class="pre">10</span></code> という整数型のオブジェクトが生成され, そのオブジェクトに対して <code class="docutils literal"><span class="pre">x</span></code> というラベルを付けることになります.
+変数はオブジェクトに対する <strong>参照</strong> であるとも言われます. 基本的な書き方は次のとおりです.</p>
+<div class="highlight-python"><div class="highlight"><pre>[変数名] = [オブジェクト]
+</pre></div>
+</div>
+<p>変数名は, 大文字小文字を区別することに注意してください. 変数名として使用できる文字, パターンについて次節を参照してください.</p>
+<p>によって, [オブジェクト] を [変数名] で呼び出すことができるようになります.</p>
+<p>上のような操作を <strong>代入</strong> という風にいうこともあります. なんと呼ぼうと自由ではあるのですが, 「変数 <code class="docutils literal"><span class="pre">x</span></code> に <code class="docutils literal"><span class="pre">10</span></code> という数字を代入する」
+という考え方では思わぬ間違いにつながることもありますので注意が必要です. これについては組み込み型のひとつである <a href="#id8"><span class="problematic" id="id9">`リスト &lt;&gt;`_</span></a> を解説する際に
+説明します.</p>
+<p>変数が参照しているオブジェクトがどんなものかを調べるためには,</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [14]: </span><span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="go">10</span>
+</pre></div>
+</div>
+<p>とするか, もっと簡単に,</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [15]: </span><span class="n">x</span>
+<span class="gh">Out[15]: </span><span class="go">10</span>
+</pre></div>
+</div>
+<p>とします. インタラクティブシェルで変数名を呼び出すと, そのオブジェクトの文字列表現が画面に出力されます.</p>
+<p>変数はいつでも参照先を変更することができます. Python では実行中に変数の型が変わってもかまいません. このような性質を <strong>動的型付け</strong>
+(Dynamic Typing) と呼びます. 変数を作るときに型を決める必要がある言語仕様を <strong>静的型付け</strong> (Static Typing) といいます. 動的型付け
+言語では, 次のような操作が許されます.</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [16]: </span><span class="n">y</span> <span class="o">=</span> <span class="s">&quot;This is a string&quot;</span>
+
+<span class="gp">In [17]: </span><span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="gh">Out[17]: </span><span class="go">str</span>
+
+<span class="gp">In [18]: </span><span class="n">y</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="gp">In [19]: </span><span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="gh">Out[19]: </span><span class="go">int</span>
+
+<span class="gp">In [20]: </span><span class="n">y</span> <span class="o">=</span> <span class="mf">1.2</span>
+
+<span class="gp">In [21]: </span><span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="gh">Out[21]: </span><span class="go">float</span>
+</pre></div>
+</div>
+<p>Python のように参照先の型を変えられるという性質にはデメリットもあります. コードが期待している型と, 実際に入力された型が異なる場合には
+もちろんコードは正しく動きません. このような場合に静的型付け言語では実行する前にエラーになりますが, 動的型付け言語では実行してみないとエラー
+であると判定されません. ひょっとすると実行しても結果を見るまでエラーとは分からないかもしれません. 動的型付けの自由度の高さを活かすためには, 注意深くコーディングする必要があります.</p>
+<p>最後に, Python では複数の変数を同時に代入することができます.</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [22]: </span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="mf">0.5j</span>
+
+<span class="gp">In [23]: </span><span class="n">a</span>
+<span class="gh">Out[23]: </span><span class="go">1</span>
+
+<span class="gp">In [24]: </span><span class="n">b</span>
+<span class="go">           Out[24]: -0.5</span>
+
+<span class="gp">In [25]: </span><span class="n">c</span>
+<span class="go">                         Out[25]: (1-0.5j)</span>
+</pre></div>
+</div>
+<p>このテクニックを変数を入れ替えたいときに使うことができます.</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [26]: </span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
+
+<span class="gp">In [27]: </span><span class="n">a</span>
+<span class="gh">Out[27]: </span><span class="go">-0.5</span>
+
+<span class="gp">In [28]: </span><span class="n">b</span>
+<span class="go">              Out[28]: 1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>有効な名前<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>変数名にかぎらず, 関数, クラス, モジュールその他, 名前が付くもの (オブジェクト) の名前には一定のルールがあります.
+基本的なルールは, アルファベットの大文字・小文字, _ (アンダースコア) と数字からなる文字の並びで, 最初の文字が数字でなくてはいけません.</p>
+<p>したがって, 次のような名前は使うことが出来ますが</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [29]: </span><span class="n">data_2014</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="gp">In [30]: </span><span class="n">data_2014</span>
+<span class="gh">Out[30]: </span><span class="go">[]</span>
+</pre></div>
+</div>
+<p>次のような名前は認められません.</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [31]: </span><span class="mi">2014</span><span class="n">_data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-31-7edfdf502948&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<span class="g-Whitespace">    </span><span class="mi">2014</span><span class="n">_data</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+<p>Python 3 では一部のUnicode文字を名前に使うことができるようになりました.</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [32]: </span><span class="err">赤</span><span class="p">,</span> <span class="err">緑</span><span class="p">,</span> <span class="err">青</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+
+<span class="gp">In [33]: </span><span class="err">赤</span> <span class="o">+</span> <span class="err">緑</span> <span class="o">+</span> <span class="err">青</span>
+<span class="gh">Out[33]: </span><span class="go">100</span>
+</pre></div>
+</div>
+<p>漢字を使うことは滅多にないかもしれませんが, ギリシャ文字などを使うことで数式とコードの対応関係が明確になり可読性を高めるかもしれません.</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [34]: </span><span class="err">μ</span><span class="p">,</span> <span class="err">σ</span><span class="mi">2</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span>
+</pre></div>
+</div>
+<p>上記の命名規則にしたがっていたとしても, いくつかの名前は使うことができません. また, いくつかの名前は使うべきではありません.</p>
+<div class="section" id="id5">
+<h3>予約語<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>次に挙げる名前はPythonインタプリタによって確保されていますので, これらの名前は使うことはできません.</p>
+<div class="highlight-text"><div class="highlight"><pre>False      class      finally    is         return
+None       continue   for        lambda     try
+True       def        from       nonlocal   while
+and        del        global     not        with
+as         elif       if         or         yield
+assert     else       import     pass
+break      except     in         raise
+</pre></div>
+</div>
+<p>予約語に挙げられていませんが, <code class="docutils literal"><span class="pre">__debug__</span></code> という名前も使うことができません.</p>
+</div>
+<div class="section" id="id6">
+<h3>組み込み定数<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-text"><div class="highlight"><pre>NotImplemented   Ellipsis
+</pre></div>
+</div>
+<p>はPythonインタプリタが定めた定数です. これらを名前にするできではありません.</p>
+<p>この2つと <code class="docutils literal"><span class="pre">False</span></code>, <code class="docutils literal"><span class="pre">True</span></code>,  <code class="docutils literal"><span class="pre">None</span></code>, <code class="docutils literal"><span class="pre">__debug__</span></code> の6つは組み込み定数と呼ばれています.</p>
+</div>
+<div class="section" id="id7">
+<h3>組み込み関数と組み込み例外, 標準ライブラリ<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>組み込み関数と呼ばれている, いくつかの関数があります.
+例えば <code class="docutils literal"><span class="pre">print()</span></code> 関数は, 標準出力 (画面) に文字を出力する基本的な関数です.
+Python ではこのような関数名もラベルとして使用することができます. しかし, 実際に</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [35]: </span><span class="k">print</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>といった代入を行なったとしたらどうでしょうか? その後のコードはもはや暗号です.
+あなたのコードを読む人 (例えば1週間後のあなた) の期待を裏切るような命名・代入は避けるべきです.</p>
+<p>標準で使用されている名前を使う場合には, その必然性をよく考えてからにしましょう.</p>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Kenji Sato.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
