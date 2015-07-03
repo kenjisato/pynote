@@ -1,5 +1,5 @@
 =============
-Python の基本
+Python 入門
 =============
 
 .. toctree::
@@ -7,5 +7,8 @@ Python の基本
 
    literal_variable
    arithmetic
+   logic
+   condition
+   userdefined_func
    types
 
