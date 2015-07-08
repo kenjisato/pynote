@@ -10,44 +10,45 @@ Python では, 真値は ``True``, 偽値は ``False`` です. これらをま�
 
 .. ipython::
 
-    In [9]: area = 100
+   In [9]: area = 100
 
-    In [10]: area < 1000
-    Out[10]: True
+   In [10]: area < 1000
+   Out[10]: True
 
-    In [11]: area > 1000
-    Out[11]: False
+   In [11]: area > 1000
+   Out[11]:  False
 
 Python すべての式が真または偽と評価されます. 真偽値を知るためには, ``bool()`` 組み込み関数を使います.
 
 .. ipython::
 
-    In [16]: bool('')
-    Out[16]: False
+   In [16]: bool('')
+   Out[16]: False
 
-    In [17]: bool("This is truthy")
-    Out[17]: True
+   In [17]: bool("This is truthy")
+   Out[17]: True
 
-    In [18]: bool(10)
-    Out[18]: True
+   In [18]: bool(10)
+   Out[18]: True
 
-    In [19]: bool(0)
-    Out[19]: False
+   In [19]: bool(0)
+   Out[19]: False
 
-    In [20]: bool(1.0)
-    Out[20]: True
+   In [20]: bool(1.0)
+   Out[20]: True
 
-    In [21]: bool(0.0)
-    Out[21]: False
+   In [21]: bool(0.0)
+   Out[21]: False
 
-    In [22]: bool(1j)
-    Out[22]: True
+   In [22]: bool(1j)
+   Out[22]: True
 
-    In [23]: bool(0j)
-    Out[23]: False
+   In [23]: bool(0j)
+   Out[23]: False
 
-    In [45]: bool(None)
-    Out[45]: False
+   In [45]: bool(None)
+   Out[45]: False
+
 
 ``bool()`` が ``True`` を返す式を **truthy**, ``False`` を返す式を **falsy** であるといいます.
 上の例で見たように, 空の文字列は falsy, 空でない文字列は truthy です. ゼロにあたる数は falsy で

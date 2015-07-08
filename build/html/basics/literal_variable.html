@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -41,7 +41,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 
   </head>
-  <body role="document">
+  <body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
     <div class="container">
@@ -81,6 +81,9 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="">リテラルと変数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="arithmetic.html">算術計算</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logic.html">論理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="condition.html">条件分岐</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userdefined_func.html">関数定義 (その1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userdefined_func2.html">関数定義 (その2)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="types.html">組込み型</a></li>
 </ul>
 </li>
@@ -186,7 +189,7 @@
 ばれる情報を持っていて, そのオブジェクトに対して許される操作が決まっています.</p>
 <p>基本的なオブジェクトには「リテラル」と呼ばれる表記法があり, 簡便な記法によってオブジェクトを作ることができます. 文字列のリテラル, 整数の
 リテラル, 小数のリテラル, 複素数のリテラルなどがこのテキストで使う中でもっとも基本的なものです.</p>
-<p>文字(列)を引用符 (<code class="docutils literal"><span class="pre">&quot;</span> <span class="pre">...</span> <span class="pre">&quot;</span></code> or <code class="docutils literal"><span class="pre">'</span> <span class="pre">...</span> <span class="pre">'</span></code>)で囲んだものが文字列リテラルです. 引用符の中に引用符を入れたい場合は, 種類の異なる引用符を
+<p>文字(列)を引用符 (<tt class="docutils literal"><span class="pre">&quot;</span> <span class="pre">...</span> <span class="pre">&quot;</span></tt> or <tt class="docutils literal"><span class="pre">'</span> <span class="pre">...</span> <span class="pre">'</span></tt>)で囲んだものが文字列リテラルです. 引用符の中に引用符を入れたい場合は, 種類の異なる引用符を
 使って囲みます.</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [1]: </span><span class="s">&#39;This is a string literal.&#39;</span>
 <span class="gh">Out[1]: </span><span class="go">&#39;This is a string literal.&#39;</span>
@@ -198,8 +201,8 @@
 <span class="go">                                                                             Out[3]: &quot;This is a &#39;nested&#39; quatation mark.&quot;</span>
 </pre></div>
 </div>
-<p>数字 (整数, 小数, 複素数) のリテラルは自明なものです. 虚数部分を <code class="docutils literal"><span class="pre">1j</span></code>, <code class="docutils literal"><span class="pre">2j</span></code> (あるいは, <code class="docutils literal"><span class="pre">1J</span></code>, <code class="docutils literal"><span class="pre">2J</span></code>)
-のように書くことに注意してください. <code class="docutils literal"><span class="pre">1j</span></code> の代わりに <code class="docutils literal"><span class="pre">j</span></code> とすることはできません.</p>
+<p>数字 (整数, 小数, 複素数) のリテラルは自明なものです. 虚数部分を <tt class="docutils literal"><span class="pre">1j</span></tt>, <tt class="docutils literal"><span class="pre">2j</span></tt> (あるいは, <tt class="docutils literal"><span class="pre">1J</span></tt>, <tt class="docutils literal"><span class="pre">2J</span></tt>)
+のように書くことに注意してください. <tt class="docutils literal"><span class="pre">1j</span></tt> の代わりに <tt class="docutils literal"><span class="pre">j</span></tt> とすることはできません.</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [4]: </span><span class="mi">10</span>
 <span class="gh">Out[4]: </span><span class="go">10</span>
 
@@ -216,7 +219,7 @@
 <span class="go">                                              Out[8]: (10+1j)</span>
 </pre></div>
 </div>
-<p>上で挙げた表記は特定の型のオブジェクトを生成しています. <code class="docutils literal"><span class="pre">type()</span></code> 関数を使って確認しておきましょう.</p>
+<p>上で挙げた表記は特定の型のオブジェクトを生成しています. <tt class="docutils literal"><span class="pre">type()</span></tt> 関数を使って確認しておきましょう.</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [9]: </span><span class="nb">type</span><span class="p">(</span><span class="s">&quot;This is another string&quot;</span><span class="p">)</span>
 <span class="gh">Out[9]: </span><span class="go">str</span>
 
@@ -239,14 +242,14 @@
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [13]: </span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
 </pre></div>
 </div>
-<p>と書けば, <code class="docutils literal"><span class="pre">10</span></code> という整数型のオブジェクトが生成され, そのオブジェクトに対して <code class="docutils literal"><span class="pre">x</span></code> というラベルを付けることになります.
+<p>と書けば, <tt class="docutils literal"><span class="pre">10</span></tt> という整数型のオブジェクトが生成され, そのオブジェクトに対して <tt class="docutils literal"><span class="pre">x</span></tt> というラベルを付けることになります.
 変数はオブジェクトに対する <strong>参照</strong> であるとも言われます. 基本的な書き方は次のとおりです.</p>
 <div class="highlight-python"><div class="highlight"><pre>[変数名] = [オブジェクト]
 </pre></div>
 </div>
 <p>変数名は, 大文字小文字を区別することに注意してください. 変数名として使用できる文字, パターンについて次節を参照してください.</p>
 <p>によって, [オブジェクト] を [変数名] で呼び出すことができるようになります.</p>
-<p>上のような操作を <strong>代入</strong> という風にいうこともあります. なんと呼ぼうと自由ではあるのですが, 「変数 <code class="docutils literal"><span class="pre">x</span></code> に <code class="docutils literal"><span class="pre">10</span></code> という数字を代入する」
+<p>上のような操作を <strong>代入</strong> という風にいうこともあります. なんと呼ぼうと自由ではあるのですが, 「変数 <tt class="docutils literal"><span class="pre">x</span></tt> に <tt class="docutils literal"><span class="pre">10</span></tt> という数字を代入する」
 という考え方では思わぬ間違いにつながることもありますので注意が必要です. これについては組み込み型のひとつである <a href="#id8"><span class="problematic" id="id9">`リスト &lt;&gt;`_</span></a> を解説する際に
 説明します.</p>
 <p>変数が参照しているオブジェクトがどんなものかを調べるためには,</p>
@@ -349,7 +352,7 @@ assert     else       import     pass
 break      except     in         raise
 </pre></div>
 </div>
-<p>予約語に挙げられていませんが, <code class="docutils literal"><span class="pre">__debug__</span></code> という名前も使うことができません.</p>
+<p>予約語に挙げられていませんが, <tt class="docutils literal"><span class="pre">__debug__</span></tt> という名前も使うことができません.</p>
 </div>
 <div class="section" id="id6">
 <h3>組み込み定数<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
@@ -357,12 +360,12 @@ break      except     in         raise
 </pre></div>
 </div>
 <p>はPythonインタプリタが定めた定数です. これらを名前にするできではありません.</p>
-<p>この2つと <code class="docutils literal"><span class="pre">False</span></code>, <code class="docutils literal"><span class="pre">True</span></code>,  <code class="docutils literal"><span class="pre">None</span></code>, <code class="docutils literal"><span class="pre">__debug__</span></code> の6つは組み込み定数と呼ばれています.</p>
+<p>この2つと <tt class="docutils literal"><span class="pre">False</span></tt>, <tt class="docutils literal"><span class="pre">True</span></tt>,  <tt class="docutils literal"><span class="pre">None</span></tt>, <tt class="docutils literal"><span class="pre">__debug__</span></tt> の6つは組み込み定数と呼ばれています.</p>
 </div>
 <div class="section" id="id7">
 <h3>組み込み関数と組み込み例外, 標準ライブラリ<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>組み込み関数と呼ばれている, いくつかの関数があります.
-例えば <code class="docutils literal"><span class="pre">print()</span></code> 関数は, 標準出力 (画面) に文字を出力する基本的な関数です.
+例えば <tt class="docutils literal"><span class="pre">print()</span></tt> 関数は, 標準出力 (画面) に文字を出力する基本的な関数です.
 Python ではこのような関数名もラベルとして使用することができます. しかし, 実際に</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [35]: </span><span class="k">print</span> <span class="o">=</span> <span class="mi">0</span>
 </pre></div>
@@ -387,7 +390,7 @@ Python ではこのような関数名もラベルとして使用することが�
     </p>
     <p>
         &copy; Copyright 2015, Kenji Sato.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.<br/>
     </p>
   </div>
 </footer>

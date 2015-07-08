@@ -10,5 +10,6 @@ Python 入門
    logic
    condition
    userdefined_func
+   userdefined_func2
    types
 

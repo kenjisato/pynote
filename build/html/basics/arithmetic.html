@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -41,7 +41,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 
   </head>
-  <body role="document">
+  <body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
     <div class="container">
@@ -81,6 +81,9 @@
 <li class="toctree-l2"><a class="reference internal" href="literal_variable.html">リテラルと変数</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">算術計算</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logic.html">論理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="condition.html">条件分岐</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userdefined_func.html">関数定義 (その1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userdefined_func2.html">関数定義 (その2)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="types.html">組込み型</a></li>
 </ul>
 </li>
@@ -175,7 +178,7 @@
 <p>基本的な算術計算の方法を確認しておきましょう.</p>
 <div class="section" id="id2">
 <h2>四則演算<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>まず整数, 小数の加減乗除を確認しておきます. 四則演算を表す記号として 加算 <code class="docutils literal"><span class="pre">+</span></code>, 減算 <code class="docutils literal"><span class="pre">-</span></code>, 乗算 <code class="docutils literal"><span class="pre">*</span></code>, 除算 <code class="docutils literal"><span class="pre">/</span></code> を用います.
+<p>まず整数, 小数の加減乗除を確認しておきます. 四則演算を表す記号として 加算 <tt class="docutils literal"><span class="pre">+</span></tt>, 減算 <tt class="docutils literal"><span class="pre">-</span></tt>, 乗算 <tt class="docutils literal"><span class="pre">*</span></tt>, 除算 <tt class="docutils literal"><span class="pre">/</span></tt> を用います.
 除算以外の演算は, 整数と整数の演算結果は整数になり, 1つでも小数が入る演算は結果が小数になります. 除算の結果は必ず小数になります.
 (Python 3 をインストールしていますね？)</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [1]: </span><span class="mi">10</span> <span class="o">+</span> <span class="mi">15</span>
@@ -219,7 +222,7 @@
 <span class="go">                                                                 Out[13]: 0.2</span>
 </pre></div>
 </div>
-<p>ゼロで割ると, <code class="docutils literal"><span class="pre">ZeroDivisionError</span></code> というエラーになります.</p>
+<p>ゼロで割ると, <tt class="docutils literal"><span class="pre">ZeroDivisionError</span></tt> というエラーになります.</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [14]: </span><span class="n">x</span> <span class="o">/</span> <span class="mf">0.0</span>
 <span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ZeroDivisionError</span><span class="g-Whitespace">                         </span>Traceback (most recent call last)
@@ -302,8 +305,8 @@ from [モジュール名] import [関数名, クラス名 etc]
 <span class="ne">ValueError</span>: math domain error
 </pre></div>
 </div>
-<p>このノートでは, Numpy/Scipy という科学計算ライブラリを利用しますので, <code class="docutils literal"><span class="pre">math</span></code> モジュールを使うことはほとんどありません.
-しかし, 次の重要な違いを認識しておいてください: <code class="docutils literal"><span class="pre">math</span></code> モジュールはすべてのPython実装と同時にインストールされる <strong>標準ライブラリ</strong>
+<p>このノートでは, Numpy/Scipy という科学計算ライブラリを利用しますので, <tt class="docutils literal"><span class="pre">math</span></tt> モジュールを使うことはほとんどありません.
+しかし, 次の重要な違いを認識しておいてください: <tt class="docutils literal"><span class="pre">math</span></tt> モジュールはすべてのPython実装と同時にインストールされる <strong>標準ライブラリ</strong>
 の一部である一方で, Numpy/Scipy はユーザーが自らインストールする必要のあるサードパーティー製ライブラリです.
 あなたが作ったプログラムを使うユーザー層に応じて使い分ける必要があります.</p>
 <div class="section" id="id4">
@@ -313,7 +316,7 @@ from [モジュール名] import [関数名, クラス名 etc]
 インターネットで取得したデータを分析しやすいように整形するというような例です.
 この場合には, 関数はファイル操作をしているだけで, 特別な値を返す必要はありません.
 数学の関数と類似の概念とはいえませんが, しだいに慣れてくるでしょう.</p>
-<p>なお, 意味のある出力をしない関数でも <code class="docutils literal"><span class="pre">None</span></code> という特別な値を出力します.</p>
+<p>なお, 意味のある出力をしない関数でも <tt class="docutils literal"><span class="pre">None</span></tt> という特別な値を出力します.</p>
 </div>
 </div>
 </div>
@@ -331,7 +334,7 @@ from [モジュール名] import [関数名, クラス名 etc]
     </p>
     <p>
         &copy; Copyright 2015, Kenji Sato.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.<br/>
     </p>
   </div>
 </footer>
