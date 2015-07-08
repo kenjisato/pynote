@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>関数定義 &mdash; Python programing for economic dynamics 0.1 documentation</title>
+    <title>関数定義 (その1) &mdash; Python programing for economic dynamics 0.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -26,14 +26,14 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="top" title="Python programing for economic dynamics 0.1 documentation" href="../index.html" />
     <link rel="up" title="Python 入門" href="index.html" />
-    <link rel="next" title="組込み型" href="types.html" />
+    <link rel="next" title="関数定義 (その2)" href="userdefined_func2.html" />
     <link rel="prev" title="条件分岐" href="condition.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -41,7 +41,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 
   </head>
-  <body role="document">
+  <body>
 
   <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
     <div class="container">
@@ -82,7 +82,8 @@
 <li class="toctree-l2"><a class="reference internal" href="arithmetic.html">算術計算</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logic.html">論理</a></li>
 <li class="toctree-l2"><a class="reference internal" href="condition.html">条件分岐</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">関数定義</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">関数定義 (その1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="userdefined_func2.html">関数定義 (その2)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="types.html">組込み型</a></li>
 </ul>
 </li>
@@ -103,9 +104,14 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">関数定義</a><ul>
+<li><a class="reference internal" href="#">関数定義 (その1)</a><ul>
 <li><a class="reference internal" href="#id2">基本構文</a></li>
-<li><a class="reference internal" href="#id3">スコープ</a></li>
+<li><a class="reference internal" href="#id3">関数作成の目的</a></li>
+<li><a class="reference internal" href="#online-python-tutor">参考: Online Python Tutor</a><ul>
+<li><a class="reference internal" href="#code-1">Code-1</a></li>
+<li><a class="reference internal" href="#code-2">Code-2</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -121,7 +127,7 @@
     </a>
   </li>
   <li>
-    <a href="types.html" title="Next Chapter: 組込み型"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">組込み型 &raquo;</span>
+    <a href="userdefined_func2.html" title="Next Chapter: 関数定義 (その2)"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">関数定義 (その2) &raquo;</span>
     </a>
   </li>
               
@@ -149,9 +155,14 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">関数定義</a><ul>
+<li><a class="reference internal" href="#">関数定義 (その1)</a><ul>
 <li><a class="reference internal" href="#id2">基本構文</a></li>
-<li><a class="reference internal" href="#id3">スコープ</a></li>
+<li><a class="reference internal" href="#id3">関数作成の目的</a></li>
+<li><a class="reference internal" href="#online-python-tutor">参考: Online Python Tutor</a><ul>
+<li><a class="reference internal" href="#code-1">Code-1</a></li>
+<li><a class="reference internal" href="#code-2">Code-2</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -165,8 +176,8 @@
     <div class="col-md-9">
       
   <div class="section" id="id1">
-<h1>関数定義<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="arithmetic.html"><em>算術計算</em></a> で <code class="docutils literal"><span class="pre">math.log()</span></code>, <code class="docutils literal"><span class="pre">math.log10()</span></code>, <code class="docutils literal"><span class="pre">math.exp()</span></code> などの関数を使いました. これらの関数は標準ライブラリ
+<h1>関数定義 (その1)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="arithmetic.html"><em>算術計算</em></a> で <tt class="docutils literal"><span class="pre">math.log()</span></tt>, <tt class="docutils literal"><span class="pre">math.log10()</span></tt>, <tt class="docutils literal"><span class="pre">math.exp()</span></tt> などの関数を使いました. これらの関数は標準ライブラリ
 で定義されているものです. この節では, 自前の関数を定義する方法を学びます.</p>
 <div class="section" id="id2">
 <h2>基本構文<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
@@ -181,7 +192,7 @@
     <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span>  <span class="c"># 3</span>
 </pre></div>
 </div>
-<p>のように書きます. 例のごとく コピー → <code class="docutils literal"><span class="pre">%paste</span></code> で IPython シェルに渡し, 動作を確認してみてください.</p>
+<p>のように書きます. 例のごとく コピー → <tt class="docutils literal"><span class="pre">%paste</span></tt> で IPython シェルに渡し, 動作を確認してみてください.</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [1]: </span><span class="o">%</span><span class="k">paste</span>
 <span class="go">def my_double(x):</span>
 <span class="go">    return 2 * x</span>
@@ -201,11 +212,11 @@
 </pre></div>
 </div>
 <ol class="arabic simple">
-<li><code class="docutils literal"><span class="pre">my_double</span></code> は関数の名前です</li>
-<li><code class="docutils literal"><span class="pre">def</span> <span class="pre">my_double(x):</span></code> の行で, 仮引数 (パラメータ) <code class="docutils literal"><span class="pre">x</span></code> を宣言しています. これで, <code class="docutils literal"><span class="pre">my_double</span></code> は引数を1つだけ取る関数になります.</li>
-<li><code class="docutils literal"><span class="pre">return</span></code> 文が関数によって値が出力されます.</li>
-<li>仮引数 <code class="docutils literal"><span class="pre">x</span></code> を 10 として関数が実行されます. <code class="docutils literal"><span class="pre">return</span></code> 文は 2 * 10 を出力します.</li>
-<li>この関数は 2 * x さえ正しく定義されていれば実行できます. ただし, 常に意味があるとは限りません.</li>
+<li><tt class="docutils literal"><span class="pre">my_double</span></tt> は関数の名前です</li>
+<li><tt class="docutils literal"><span class="pre">def</span> <span class="pre">my_double(x):</span></tt> の行で, 仮引数 (パラメータ) <tt class="docutils literal"><span class="pre">x</span></tt> を宣言しています. これで, <tt class="docutils literal"><span class="pre">my_double</span></tt> は引数を1つだけ取る関数になります.</li>
+<li><tt class="docutils literal"><span class="pre">return</span></tt> 文が関数によって値が出力されます.</li>
+<li>仮引数 <tt class="docutils literal"><span class="pre">x</span></tt> を 10 として関数が実行されます. <tt class="docutils literal"><span class="pre">return</span></tt> 文は 2 * 10 を出力します.</li>
+<li>この関数は <tt class="docutils literal"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">x</span></tt> さえ正しく定義されていれば実行できます. ただし, 常に意味があるとは限りません.</li>
 </ol>
 <p>仮引数を2つ以上取る場合も同様に定義します.</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [6]: </span><span class="k">def</span> <span class="nf">my_add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>  <span class="c"># 簡単な関数なら1行で定義してよい</span>
@@ -220,10 +231,115 @@
 <span class="go">                       Out[9]: &#39;abcdef&#39;</span>
 </pre></div>
 </div>
+<p>引数を1つも取らない関数も定義できます.</p>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [10]: </span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="gp">In [11]: </span><span class="k">def</span> <span class="nf">random_print</span><span class="p">():</span> <span class="k">print</span><span class="p">(</span><span class="s">&#39;The number is&#39;</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">())</span>
+
+<span class="gp">In [12]: </span><span class="n">random_print</span><span class="p">()</span>
+<span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-12-6b933a59e957&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">random_print</span><span class="p">()</span>
+
+<span class="nn">&lt;ipython-input-11-b6242a43293b&gt;</span> in <span class="ni">random_print</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">random_print</span><span class="p">():</span> <span class="k">print</span><span class="p">(</span><span class="s">&#39;The number is&#39;</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">())</span>
+
+<span class="ne">TypeError</span>: &#39;int&#39; object is not callable
+</pre></div>
+</div>
 </div>
 <div class="section" id="id3">
-<h2>スコープ<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>関数を作る目的は, 繰り返し実行するコード片をまとめて再利用しやすくするところにあります.</p>
+<h2>関数作成の目的<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>関数を作る目的は, 繰り返し実行するコード片をまとめて再利用しやすくしたり, プログラムのロジックを明確にすることにあります.</p>
+<p>例えば, 次のコードと,</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Code-1</span>
+
+<span class="nb">raw_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Enter income: &#39;</span><span class="p">)</span>
+<span class="n">income</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">raw_input</span><span class="p">)</span>  <span class="c"># 3</span>
+
+<span class="k">if</span> <span class="n">income</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">6</span><span class="p">:</span>
+   <span class="n">tax_rate</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="k">elif</span> <span class="n">income</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">6</span><span class="p">:</span>
+   <span class="n">tax_rate</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="k">elif</span> <span class="n">income</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">7</span><span class="p">:</span>
+   <span class="n">tax_rate</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">tax_rate</span> <span class="o">=</span> <span class="mf">0.3</span>
+
+<span class="n">after_tax_income</span> <span class="o">=</span> <span class="n">income</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">tax_rate</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&#39;After tax income is&#39;</span><span class="p">,</span> <span class="n">after_tax_income</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>次のコードを比べてみてください.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Code-2</span>
+
+<span class="k">def</span> <span class="nf">input_integer</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+    <span class="nb">raw_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">msg</span> <span class="o">+</span> <span class="s">&#39;: &#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="nb">raw_input</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">tax_rate</span><span class="p">(</span><span class="n">income</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">income</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">6</span><span class="p">:</span>
+        <span class="n">tax_rate</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">elif</span> <span class="n">income</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">6</span><span class="p">:</span>
+        <span class="n">tax_rate</span> <span class="o">=</span> <span class="mf">0.1</span>
+    <span class="k">elif</span> <span class="n">income</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">7</span><span class="p">:</span>
+        <span class="n">tax_rate</span> <span class="o">=</span> <span class="mf">0.2</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">tax_rate</span> <span class="o">=</span> <span class="mf">0.3</span>
+    <span class="k">return</span> <span class="n">tax_rate</span>
+
+<span class="n">income</span> <span class="o">=</span> <span class="n">input_integer</span><span class="p">(</span><span class="s">&#39;Enter income&#39;</span><span class="p">)</span>
+<span class="n">after_tax_income</span> <span class="o">=</span> <span class="n">income</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">tax_rate</span><span class="p">(</span><span class="n">income</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&#39;after tax income is&#39;</span><span class="p">,</span> <span class="n">after_tax_income</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Code-1 と比較して Code-2 の方が行数が長くなっています. Code-1 はコードを上から順に読めばよいのに対して,
+Code-2 では関数定義に戻らないと何をしているのかが分かりません.</p>
+<p>それでは Code-2 を使う利点は何でしょうか?</p>
+<p>1つには, Code-1 では <tt class="docutils literal"><span class="pre">raw_input</span></tt> という中間生成物が残り続けるのに対して,
+Code-2 では <tt class="docutils literal"><span class="pre">input_integer()</span></tt> 関数の呼び出し時に生成され関数が値を返すと消滅します.
+このような変数を <strong>ローカル変数</strong> と呼びます (<a class="reference internal" href="userdefined_func2.html"><em>関数定義 (その2)</em></a> 参照).
+プログラムが二度と使わない名前で溢れてしまうことに比べると,
+とても上品な振る舞いです.</p>
+<p>次に, <tt class="docutils literal"><span class="pre">tax_rate()</span></tt> 関数は, 税率計算に必要なロジックを抽出したものであることに注目してください. 仮引数 <tt class="docutils literal"><span class="pre">income</span></tt> の値が
+いくらなのかは事前には分かりませんが, どんな値が入ろうとも適切に処理しようとします. 一方 Code-1 の税率計算部分は, 見た目はまったく
+同じなのですが, 事前に <tt class="docutils literal"><span class="pre">income</span></tt> の値が定まっているという点で異なっています.
+データとロジックを分離するというのは一般的に言ってよい方針であり, プログラムの規模が大きくなるとこの方針は威力を発揮します.</p>
+<p>次のコード片</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">after_tax_income</span> <span class="o">=</span> <span class="n">income</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">tax_rate</span><span class="p">(</span><span class="n">income</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>に注目してください. ここで, 税引き後所得 <tt class="docutils literal"><span class="pre">after_tax_income</span></tt> は <tt class="docutils literal"><span class="pre">tax_rate(income)</span></tt> によって算出された税率をもとに計算されていますが,</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">tax_rate()</span></tt> を <strong>使うプログラマー</strong> は <tt class="docutils literal"><span class="pre">tax_rate()</span></tt> の実装方法を意識する必要はありません</li>
+<li><tt class="docutils literal"><span class="pre">tax_rate()</span></tt> を <strong>作るプログラマー</strong> はどのように使われるかを意識する必要がありません</li>
+</ul>
+<p>2人の間で共有しなければいけない理解は「収入を入力すると税率が出力される」という仕様のみです.
+計算手続きの論理的な塊を関数としてまとめて実装の詳細を関数定義に隠蔽することで, プログラムのロジックが整理されて可読性を高め,
+保守や拡張が容易になります. これは
+「 <a class="reference external" href="https://ja.wikipedia.org/wiki/抽象化_(計算機科学)#.E6.A7.8B.E9.80.A0.E5.8C.96.E3.83.97.E3.83.AD.E3.82.B0.E3.83.A9.E3.83.9F.E3.83.B3.E3.82.B0">抽象化</a> 」
+と呼ばれるもっと大きな概念の一部ですが, 重要な点なので意識しておくとよいでしょう.</p>
+<p>ちなみに, この <tt class="docutils literal"><span class="pre">tax_rate()</span></tt> は税率のしきい値と限界税率の設定を関数内部に埋め込んでいます (ハードコードされている).
+税率変更を見越して長期的に使いたいコードであれば, Code-2 のような書き方は望ましくないでしょう.
+一時的に必要なだけのアドホックなコードを書いているのであれば, 税率を変更できる余地があっても使い道がないでしょう.
+設計の目的に応じて適切な実装を選択することが大切です.</p>
+</div>
+<div class="section" id="online-python-tutor">
+<h2>参考: Online Python Tutor<a class="headerlink" href="#online-python-tutor" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://www.pythontutor.com">Online Python Tutor</a> はコードの実行過程をヴィジュアル化してくれるウェブサービスです.
+変数が作られるタイミング, 条件分岐, 関数呼び出しの動作を理解するのに大きな助けになってくれると思います. ぜひ活用してください.</p>
+<p>Code-1 と Code-2 について <a class="reference external" href="http://www.pythontutor.com">Online Python Tutor</a> の出力を掲載しておきます. 実際に動かしてみてください.</p>
+<div class="section" id="code-1">
+<h3>Code-1<a class="headerlink" href="#code-1" title="Permalink to this headline">¶</a></h3>
+<div style="margin: 10px auto">
+    <iframe width="800" height="700" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=raw_input+%3D+input('Enter+income%3A+'%29%0Aincome+%3D+int(raw_input%29++%23+3%0A%0Aif+income+%3C+10+**+6%3A%0A++++tax_rate+%3D+0.0%0Aelif+income+%3C+5+*+10+**+6%3A%0A++++tax_rate+%3D+0.1%0Aelif+income+%3C+10+**+7%3A%0A++++tax_rate+%3D+0.2%0Aelse%3A%0A++++tax_rate+%3D+0.3%0A%0Aafter_tax_income+%3D+income+*+(1+-+tax_rate%29%0Aprint('After+tax+income+is',+after_tax_income%29&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&py=3&rawInputLstJSON=%5B%5D&curInstr=0&codeDivWidth=350&codeDivHeight=400"> </iframe>
+</div></div>
+<div class="section" id="code-2">
+<h3>Code-2<a class="headerlink" href="#code-2" title="Permalink to this headline">¶</a></h3>
+<div style="margin: 10px auto">
+   <iframe width="800" height="500" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=def+input_integer(msg%29%3A%0A++++raw_input+%3D+input(msg+%2B+'%3A+'%29%0A++++return+int(raw_input%29%0A%0Adef+tax_rate(income%29%3A%0A++++if+income+%3C+10+**+6%3A%0A++++++++tax_rate+%3D+0.0%0A++++elif+income+%3C+5+*+10+**+6%3A%0A++++++++tax_rate+%3D+0.1%0A++++elif+income+%3C+10+**+7%3A%0A++++++++tax_rate+%3D+0.2%0A++++else%3A%0A++++++++tax_rate+%3D+0.3%0A++++return+tax_rate%0A%0Aincome+%3D+input_integer('Enter+income'%29%0Aafter_tax_income+%3D+income+*+(1.0+-+tax_rate(income%29%29%0Aprint('after+tax+income+is',+after_tax_income%29&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&py=3&rawInputLstJSON=%5B%2210000000%22%5D&curInstr=16&codeDivWidth=350&codeDivHeight=400"> </iframe>
+</div></div>
 </div>
 </div>
 
@@ -240,7 +356,7 @@
     </p>
     <p>
         &copy; Copyright 2015, Kenji Sato.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.<br/>
     </p>
   </div>
 </footer>
