@@ -26,7 +26,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
@@ -41,7 +41,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 
   </head>
-  <body>
+  <body role="document">
 
   <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
     <div class="container">
@@ -189,7 +189,7 @@ In [1]:
 <span class="gh">Out[2]: </span><span class="go">100</span>
 </pre></div>
 </div>
-<p>Pythonインタプリタは <tt class="docutils literal"><span class="pre">#</span></tt> から行末までを読み飛ばします. このノートではコードの解説をするために付加しますが,
+<p>Pythonインタプリタは <code class="docutils literal"><span class="pre">#</span></code> から行末までを読み飛ばします. このノートではコードの解説をするために付加しますが,
 読者が付ける必要は (必ずしも) ありません.</p>
 <p>% が先頭についている命令は IPython のマジックコマンドと呼ばれる特殊コマンドです
 次の3つは説明不要でしょう</p>
@@ -204,7 +204,7 @@ In [1]:
 <span class="go">                                                                                                                                                                                                      Makefile  [34mbuild[39;49m[0m/    [34msource[39;49m[0m/</span>
 </pre></div>
 </div>
-<p><tt class="docutils literal"><span class="pre">%cat</span></tt> はテキストファイルの中身を表示します. <tt class="docutils literal"><span class="pre">%pycat</span></tt> はPythonスクリプトをシンタックスハイライトして表示します.</p>
+<p><code class="docutils literal"><span class="pre">%cat</span></code> はテキストファイルの中身を表示します. <code class="docutils literal"><span class="pre">%pycat</span></code> はPythonスクリプトをシンタックスハイライトして表示します.</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [6]: </span><span class="o">%</span><span class="k">cat</span> hello.py
 <span class="go">cat: hello.py: No such file or directory</span>
 
@@ -212,25 +212,27 @@ In [1]:
 <span class="go">                                          Error: no such file, variable, URL, history range or macro</span>
 </pre></div>
 </div>
-<p><tt class="docutils literal"><span class="pre">%run</span></tt> でスクリプトを実行します. 実行時のオプションが沢山あるので公式ドキュメントを参照してください.
+<p><code class="docutils literal"><span class="pre">%run</span></code> でスクリプトを実行します. 実行時のオプションが沢山あるので公式ドキュメントを参照してください.
 <a class="reference external" href="https://ipython.org/ipython-doc/dev/interactive/magics.html#magic-run">https://ipython.org/ipython-doc/dev/interactive/magics.html#magic-run</a></p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [8]: </span><span class="o">%</span><span class="k">run</span> hello
 <span class="go">ERROR: File `&#39;hello.py&#39;` not found.</span>
 </pre></div>
 </div>
-<p>関数などのオブジェクト名の最後に <tt class="docutils literal"><span class="pre">?</span></tt> をつけてリターンを押すことでドキュメントを表示します.</p>
+<p>関数などのオブジェクト名の最後に <code class="docutils literal"><span class="pre">?</span></code> をつけてリターンを押すことでドキュメントを表示します.</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [9]: </span><span class="nb">range</span><span class="o">?</span>
-<span class="go">Type:        type</span>
-<span class="go">String form: &lt;class &#39;range&#39;&gt;</span>
-<span class="go">Namespace:   Python builtin</span>
 <span class="go">Docstring:</span>
 <span class="go">range(stop) -&gt; range object</span>
 <span class="go">range(start, stop[, step]) -&gt; range object</span>
 
-<span class="go">Return a sequence of numbers from start to stop by step.</span>
+<span class="go">Return an object that produces a sequence of integers from start (inclusive)</span>
+<span class="go">to stop (exclusive) by step.  range(i, j) produces i, i+1, i+2, ..., j-1.</span>
+<span class="go">start defaults to 0, and stop is omitted!  range(4) produces 0, 1, 2, 3.</span>
+<span class="go">These are exactly the valid indices for a list of 4 elements.</span>
+<span class="go">When step is given, it specifies the increment (or decrement).</span>
+<span class="go">Type:      type</span>
 </pre></div>
 </div>
-<p>IPythonシェル内で定義されている変数を一覧するためには, <tt class="docutils literal"><span class="pre">%whos</span></tt> を使います.</p>
+<p>IPythonシェル内で定義されている変数を一覧するためには, <code class="docutils literal"><span class="pre">%whos</span></code> を使います.</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [10]: </span><span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 
 <span class="gp">In [11]: </span><span class="n">s</span> <span class="o">=</span> <span class="s">&quot;important text&quot;</span>
@@ -267,7 +269,7 @@ In [1]:
     </p>
     <p>
         &copy; Copyright 2015, Kenji Sato.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.<br/>
     </p>
   </div>
 </footer>

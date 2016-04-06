@@ -1,5 +1,5 @@
 #!/bin/sh
-f [ -z "$1" ]
+if [ -z "$1" ]
 then
   echo "Which folder do you want to deploy to GitHub Pages?"
     exit 1
